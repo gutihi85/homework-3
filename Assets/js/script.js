@@ -1,27 +1,28 @@
-// Assignment Code
+// on click of the button
+// reach into the html and grab the button
 var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-function generatePassword(){
-  var options = "01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijtlmnopqrstuvwxyz!$%&/()=?";
-  var stringLength = 8-128;
-  var randomString= "";
+// add an event listener
+generateBtn.addEventListener("click", function() {
   
-  for (var i=0; i<stringLength; i++) {
-    var randnum = Math.floor(Math.random() * options.length);
-    randomString += options.substring(randnum,randnum+1);
-
-}
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
+  // -- prompt for length
+  var length = prompt('Enter desired length between 8-128 characters.')
+  // -- prompt for lowercase
+  var wantLowercase = confirm('Do you want lowercase letters?');
+  // -- prompt for uppercase
+  var wantUppercase = confirm('Do you want uppercase letters?');
+  // -- prompt for numbers
+  var wantNumbers = confirm('Do you want numbers?');
+  // -- prompt for special char
+  var wantSpecialCharacters = confirm('Do you want special characters?');
+  
+  
+  // use that prompt info to calculate a password
+  // in the mean time
+  var password = 'This is your passsword shhhh'
+  
+  // ---display the password to the user---
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+  
+  
+});
